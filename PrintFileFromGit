@@ -1,0 +1,8 @@
+node {
+   stage('Clone') {
+     git 'https://github.com/pf68/hello-world.git'
+   }
+   stage('Print') {
+     sh label: '', script: 'cat simpleSeed'
+   }
+}
