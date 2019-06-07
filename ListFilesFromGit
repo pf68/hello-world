@@ -1,0 +1,11 @@
+node {
+   stage('Clone') {
+     git 'https://github.com/pf68/hello-world.git'
+   }
+   stage('List') {
+     sh label: '', script: 'ls'
+   }
+   stage('Mail') {
+     emailext body: 'Git files listed.', subject: 'Notification from Jenkins', to: 'pjmfurtado@gmail.com'
+   }
+}
